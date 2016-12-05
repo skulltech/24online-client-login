@@ -25,17 +25,17 @@ logout_form = {'logout': 'Logout', 'password': '12121', 'username': username, 'l
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36',
-    'Origin': 'http://{24online_IP}'.format(server_IP), 'Referer': 'http://{24online_IP}/24online/webpages/client.jsp'.format(server_IP)}
+    'Origin': 'http://{}'.format(server_IP), 'Referer': 'http://{}/24online/webpages/client.jsp'.format(server_IP)}
 
 
 def login():
-    login_request = requests.post('http://{24online_IP}/24online/servlet/E24onlineHTTPClient'.format(server_IP), data=login_form,
+    login_request = requests.post('http://{}/24online/servlet/E24onlineHTTPClient'.format(server_IP), data=login_form,
                                   headers=headers)
     return login_request.status_code
 
 
 def logout():
-    logout_request = requests.post('http://{24online_IP}/24online/servlet/E24onlineHTTPClient'.format(server_IP), data=logout_form,
+    logout_request = requests.post('http://{}/24online/servlet/E24onlineHTTPClient'.format(server_IP), data=logout_form,
                                    headers=headers)
     return logout_request.status_code
 
